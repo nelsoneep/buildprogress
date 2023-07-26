@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:"Poppins",sans-serif;
+}
+body{
+    background-color: #e3edf7;
+    height:100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.buttonBox{
+    margin: 25px;
+     
+}
+#update{
+    width: 100px;
+    padding: 20px;
+    background-color: rgb(30, 137, 236);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    
+}
+.skill{
+    width: 160px;
+    height: 160px;
+    position:relative;
+}
+.outer{
+    width: 160px;
+    height:160px;
+    padding: 20px;
+    border-radius: 50%;
+     /* the box-shadow is used for creating the part */
+    box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15), 
+                -6px -6px 10px -1px rgba(255,255,255,0.7);
+}
+.inner{
+    width: 120px;
+    height:120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
+                inset -4px -4px 6px -1px rgba(255,255,255,0.7),
+                -0.5px -0.5px 0px rgba(255,255,255,1),
+                 0.5px 0.5px 0px rgba(0,0,0,0.15),
+                0px 12px 10px -10px rgba(0,0,0,0.05);
+}
+#number{
+    font-weight: 600;
+    color: #555;
+}
+circle{
+    fill:none;
+    stroke: url(#GradientColor);
+    stroke-width: 20px;
+    stroke-dasharray: 472;
+    stroke-dashoffset: 472;
+    /* we will use this stroke-dashofset property
+     to make the animation */
+    animation: anim 2s linear forwards;
+    
+}
+/* we made the whole svg file`s positon absolute so that it can be a 
+child of the skill div. */
+svg{
+    position: absolute;
+    top:0;
+    left: 0;
+}
+/* when this page refreshes, we are setting the strokeDashoffset to 0
+meaning there shouldnt be any offsetting of the circle  */
+
+@keyframes anim{
+    100%{
+        stroke-dashoffset: 165;
+
+    }
+}
